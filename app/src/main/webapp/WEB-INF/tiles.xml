@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- Creación de plantillas -->
+    <definition name="sociosLayout" template="/WEB-INF/paginas/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="styles" value="/WEB-INF/paginas/styles.jsp" />
+    </definition>
+    
+    <definition name="pubLayout" template="/WEB-INF/paginas/simple-layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="styles" value="/WEB-INF/paginas/styles.jsp" />
+    </definition>
+    
+    <!-- Vistas públicas -->
+    <definition name="login.tiles" extends="pubLayout">
+        <put-attribute name="title" value="Libreria en Linea | Inicio de sesión" />
+        <put-attribute name="body" value="/WEB-INF/paginas/login.jsp" />
+    </definition>
+    
+    <definition name="altausuario.tiles" extends="pubLayout">
+        <put-attribute name="title" value="Libreria en Linea | Regístrate" />
+        <put-attribute name="body" value="/WEB-INF/paginas/registro.jsp" />
+    </definition>
+    
+    <!-- Vistas de socios -->
+    <!-- Página de home que hereda la configuracion de sociosLayout-->
+    <definition name="home.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Libreria en Linea" />
+        <put-attribute name="body" value="/WEB-INF/paginas/home.jsp" />
+    </definition>
+    
+    <definition name="cambiopassword.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Cambio de password" />
+        <put-attribute name="body" value="/WEB-INF/paginas/cambio-passwd.jsp" />
+    </definition>
+    
+    <definition name="altalibro.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Alta libro" />
+        <put-attribute name="body" value="/WEB-INF/paginas/alta-libro.jsp" />
+    </definition>
+    
+    <!-- Raul Tipo  -->
+    
+    <definition name="secciontipo.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Seccion Tipo" />
+        <put-attribute name="body" value="/WEB-INF/paginas/secciontipo.jsp" />
+    </definition>
+    
+    <definition name="altatipo.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Alta tipo" />
+        <put-attribute name="body" value="/WEB-INF/paginas/alta-tipo.jsp" />
+    </definition>
+    
+    <!-- Andric Marca  -->
+    <definition name="marcaHome.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Marcas" />
+        <put-attribute name="body" value="/WEB-INF/paginas/marcaHome.jsp" />
+    </definition>
+
+    <definition name="altaMarca.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="AltaMarcas" />
+        <put-attribute name="body" value="/WEB-INF/paginas/altaMarca.jsp" />
+    </definition>
+    <!--************************************-->
+</tiles-definitions>

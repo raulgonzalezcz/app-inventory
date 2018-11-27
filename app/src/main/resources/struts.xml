@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- Desactivacion del estilo que Struts2 aplica por defecto -->
+	<constant name="struts.ui.theme" value="simple" />
+	
+	<package name="default" namespace="/actions/pub" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<!-- Acción por defecto del paquete -->
+		<default-action-ref name="showLoginForm" />
+		
+		<!--
+			Acción que unicamente preparara un pojo para ser enviado junto con la
+			forma de inicio de sesion al usuario 
+		-->
+		<action name="showLoginForm" method="showLoginForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">login.tiles</result>
+		</action>
+		
+		<action name="showRegisterForm" method="showRegisterForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altausuario.tiles</result>
+		</action>
+		
+		<action name="login" method="loginUsuario" 
+			class="mx.unam.posgrado.inventory.actions.LoginValidacionAction">
+			<result name="autenticado" type="redirectAction">
+				<param name="actionName">showInicio</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+			<result name="no-autenticado" type="tiles">login.tiles</result>
+			<result name="input" type="tiles">login.tiles</result>
+			<result name="error" type="tiles">login.tiles</result>
+		</action>
+		
+		<!-- 
+			Accion para recibir y procesar los datos enviados por el usuario a traves de
+			una forma de registro
+		-->
+		<action name="registro" method="registroUsuario" 
+			class="mx.unam.posgrado.inventory.actions.RegistroAction">
+			<result name="success" type="tiles">home.tiles</result>
+			<result name="input" type="tiles">altausuario.tiles</result>
+		</action>
+	</package>
+	
+	<!-- Paquete de acciones que solo pueden ser alcanzadas si se inicio sesion -->  
+	<package name="socios" namespace="/actions/socios" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<action name="showInicio" method="showHome" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">home.tiles</result>
+		</action>		
+		
+		<action name="logout" method="logoutUsuario" 
+			class="mx.unam.posgrado.inventory.actions.LoginValidacionAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showLoginForm</param>
+            	<param name="namespace">/actions/pub</param>
+            	<param name="flag">logout</param>
+			</result>
+		</action>
+		
+		<action name="showCambioPasswdForm" method="showChangePasswordForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">cambiopassword.tiles</result>
+		</action>
+		
+		<action name="cpasswd" method="cambiarPassword" 
+			class="mx.unam.posgrado.inventory.actions.CambioPasswdAction">
+			<result name="success" type="tiles">home.tiles</result>
+			<result name="passwd-no-cambiado" type="tiles">home.tiles</result>
+			<result name="input" type="tiles">cambiopassword.tiles</result>
+		</action>
+		
+		<action name="showAltaLibrosForm" method="showNewBookForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altalibro.tiles</result>
+		</action>
+		
+		<action name="altalibro" method="addBook" 
+			class="mx.unam.posgrado.inventory.actions.RegistroLibroAction">
+			<result name="success" type="tiles">home.tiles</result>
+			<result name="input" type="tiles">altalibro.tiles</result>
+		</action>
+		
+		<!-- Raul - Tipo -->
+		
+		<action name="showNewTipoInfo" method="showNewTipoInfo" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">secciontipo.tiles</result>
+		</action>
+		
+		<action name="showAltaTiposForm" method="showNewTipoForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altatipo.tiles</result>
+		</action>
+		
+		<action name="altatipo" method="agregarTipo" 
+			class="mx.unam.posgrado.inventory.actions.RegistroTipoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showNewTipoInfo</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+			<result name="input" type="tiles">altatipo.tiles</result>
+		</action>
+		
+		<action name="bajatipo" method="bajarTipo" 
+			class="mx.unam.posgrado.inventory.actions.RegistroTipoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showNewTipoInfo</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="showEditarTipo" method="showEditarTipoForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altatipo.tiles</result>
+		</action>
+		
+		<action name="cambiotipo" method="cambiarTipo" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altatipo.tiles</result>
+		</action>
+		
+		<!-- *********************************************************** -->
+		<!-- Andric - Marca -->
+		<action name="marcaHome" method="showMarcaHome" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="tiles">marcaHome.tiles</result>
+		</action>
+
+		<action name="deleteMarca" method="deleteMarcaByIdAction" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">marcaHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+
+		<action name="altaMarca" method="altaMarcaAction" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">marcaHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+
+		<action name="editarMarca" method="editarMarcaAction" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">marcaHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+
+		<action name="editarMarcaPage" method="showEditarMarcaForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altaMarca.tiles</result>               
+		</action>		
+
+		<action name="altaMarcaPage" method="showAltaMarcaForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altaMarca.tiles</result>               
+		</action>
+
+		<!-- *********************************************************** -->
+		
+		
+	</package>
+</struts>

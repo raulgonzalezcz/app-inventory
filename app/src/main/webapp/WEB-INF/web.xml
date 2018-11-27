@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+	id="WebApp_ID" version="3.0">
+
+	<display-name>Aplicacion web simple</display-name>
+  
+   	<!-- Filtro para struts 2.5 -->
+  	<filter>
+		<filter-name>struts2</filter-name>
+    	<filter-class>
+    		org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
+    	</filter-class>
+	</filter>
+	<!-- patron buscado en las URLs para ser interpretado como acciones -->
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/actions/*</url-pattern>
+    </filter-mapping>
+    <!--    
+  	<context-param>
+    	<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+    	<param-value>/WEB-INF/tiles.xml</param-value>
+	</context-param>
+	-->
+  	<!-- Listener requerido por los tiles compatible con struts 2.5.x-->
+    <listener>
+        <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+    </listener>
+  <welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
+
