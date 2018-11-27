@@ -7,5 +7,5 @@ Simple application to perform inventory checking for computer stores
 ```
 
 ## Authors
-**Andric Valdez Valenzuela and Raúl González Cruz**
+**Andric Valdez Valenzuela & Raúl González Cruz**
 >*Master in Computer Science and Engineering, UNAM*
