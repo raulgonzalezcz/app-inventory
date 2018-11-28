@@ -96,6 +96,49 @@
 			<result name="input" type="tiles">altalibro.tiles</result>
 		</action>
 		
+		<!-- *********************************************************** -->
+		<!-- Raul - Proveedor -->
+		
+		<action name="showProveedorHome" method="showProveedorHome" 
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
+			<result name="success" type="tiles">proveedorhome.tiles</result>
+		</action>
+		
+		<action name="altaproveedor" method="agregarProveedor" 
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProveedorHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="bajaproveedor" method="bajarProveedor" 
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProveedorHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="editarproveedor" method="cambiarProveedor" 
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProveedorHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="showEditarProveedorForm" method="showEditarProveedorForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altaproveedor.tiles</result>
+		</action>
+		
+		<action name="showAltaProveedoresForm" method="showAltaProveedorForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altaproveedor.tiles</result>
+		</action>
+		
+		<!-- *********************************************************** -->
 		<!-- Raul - Tipo -->
 		
 		<action name="showTipoHome" method="showTipoHome" 

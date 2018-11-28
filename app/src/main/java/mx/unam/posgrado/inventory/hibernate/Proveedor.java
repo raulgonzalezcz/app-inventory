@@ -1,47 +1,48 @@
 package mx.unam.posgrado.inventory.hibernate;
 
-import javax.persistence.Basic;
+import static javax.persistence.GenerationType.IDENTITY;
+
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.TemporalType;
 import javax.persistence.Temporal;
-import static javax.persistence.GenerationType.IDENTITY;
-
-import java.util.Date;
+import javax.persistence.TemporalType;
 
 /**
- * Class to model Tipo object
+ * Class to model Proveedor object
  * @author Raul Gonzalez Cruz
  * @version 1.0 
  * @since 24/11/2018
  */
 @Entity
-@Table(name = "tipo")
-public class Tipo implements java.io.Serializable{
+@Table(name = "proveedor")
+public class Proveedor implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
 
-	private int tipo_id;
+	private int proveedor_id;
 	private String nombre;
 	private Date fecha_creacion;
+	private String descripcion;
 	
 	/**
-	 * @return the tipo_id
+	 * @return the proveedor_id
 	 */
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "tipo_id", unique = true, nullable = false)
-	public Integer getTipo_id() {
-		return tipo_id;
+	@Column(name = "proveedor", unique = true, nullable = false)
+	public Integer getProveedor_id() {
+		return proveedor_id;
 	}
 	
 	/**
-	 * @param tipo_id the new tipo_id to set
+	 * @param proveedor_id the new proveedor_id to set
 	 */
-	public void setTipo_id(int tipo_id) {
-		this.tipo_id = tipo_id;
+	public void setProveedor_id(int proveedor_id) {
+		this.proveedor_id = proveedor_id;
 	}
 	
 	/**
@@ -57,6 +58,21 @@ public class Tipo implements java.io.Serializable{
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	/**
+	 * @return the descripcion
+	 */
+	@Column(name = "descripcion", nullable = false, length = 300)
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	/**
+	 * @param descripcion the new descripcion to set
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 	/**
@@ -79,18 +95,21 @@ public class Tipo implements java.io.Serializable{
 	 * @see java.lang.Object#toString()
 	 */
 	/**
-	 * Method to explain the tipo object
+	 * Method to explain the proveedor object
 	 */
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("Tipo [tipo_id=");
-		stringBuilder.append(tipo_id);
+		stringBuilder.append("Proveedor [proveedor_id=");
+		stringBuilder.append(proveedor_id);
 		stringBuilder.append(", \n\tnombre=");
 		stringBuilder.append(nombre);
+		stringBuilder.append(", \n\tdescripcion=");
+		stringBuilder.append(descripcion);
 		stringBuilder.append(", \n\tfecha_creacion=");
 		stringBuilder.append(fecha_creacion);
 		stringBuilder.append("]");
 		return stringBuilder.toString();
 	}	
 }
+

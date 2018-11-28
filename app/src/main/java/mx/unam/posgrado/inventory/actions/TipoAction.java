@@ -4,54 +4,62 @@ import org.apache.log4j.Logger;
 
 import java.util.List;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
-import mx.unam.posgrado.inventory.hibernate.MarcaDAO;
 import mx.unam.posgrado.inventory.hibernate.Tipo;
 import mx.unam.posgrado.inventory.hibernate.TipoDAO;
-import mx.unam.posgrado.inventory.hibernate.UsuarioDAO;
 
+/**
+ * Class to establish actions for Tipo object
+ * @author Raul Gonzalez Cruz
+ * @version 1.0 
+ * @since 24/11/2018
+ */
 public class TipoAction extends BaseAction{
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(TipoAction.class);
 	
 	private Tipo tipo;
 	private List<Tipo> tipos;
-	
-	public List<Tipo> getTipos() {
-		return tipos;
-	}
 
-	public void setTipos(List<Tipo> tipos) {
-		this.tipos = tipos;
-	}
-
+	/**
+	 * Get all the tipo objects from database
+	 * @return "success" to display the home page for Tipo class
+	 */
 	public String showTipoHome() {
-		logger.debug("showNewTipoInfo()");
+		logger.debug("showTipoHome()");
+		
 		TipoDAO tipoDAO = new TipoDAO();
 		tipos = tipoDAO.getAllTipos();
+		
 		return "success";
 	}
 	
+	/**
+	 * Add a new tipo object to database
+	 * @param tipo the new tipo to add
+	 * @return "success" to display the home page for Tipo class
+	 */
 	public String agregarTipo() {
 		logger.info("agregarTipo()");
 		
 		TipoDAO dao = new TipoDAO();
-		logger.info("Info1");
-		logger.info(tipo.getNombre());
+		logger.info("New tipo object");
 		logger.info(tipo.toString());
 		dao.saveTipo(tipo);
 		
 		return "success";
 	}
 	
+	/**
+	 * Delete an specific tipo object 
+	 * @param tipo the specific tipo to delete
+	 * @return "success" to display the home page for Tipo class
+	 */
 	public String bajarTipo() {
 		logger.info("bajarTipo()");
 		
 		TipoDAO dao = new TipoDAO();
-		logger.info("Info ID");
-		logger.info(tipo);
+		logger.info("Object information");
+		logger.info(tipo.toString());
 		Tipo completeTipo = dao.getTipoById(tipo.getTipo_id());
 		logger.info(completeTipo);
 		
@@ -60,28 +68,24 @@ public class TipoAction extends BaseAction{
 		return "success";
 	}
 	
-	/*
-	public String deleteMarcaByIdAction() {
-		logger.info("Datos recibidos: " + marca);
-		MarcaDAO dao = new MarcaDAO();
-		dao.deleteMarcaById(marca.getId());
-		return "success";
-	}
-	*/
-	
+	/**
+	 * Update the data for a specific tipo object
+	 * @param tipo the specific tipo to update with new data
+	 * @return "success" to display the home page for Tipo class
+	 */
 	public String cambiarTipo() {
 		logger.info("cambiarTipo()");
 		
 		TipoDAO dao = new TipoDAO();
 		logger.info("Info object");
-		logger.info(tipo);
+		logger.info(tipo.toString());
 		dao.updateTipo(tipo);
 		
 		return "success";
 	}
 	
 	/**
-	 * @return the tipo
+	 * @return the tipo object
 	 */
 	public Tipo getTipo() {
 		return tipo;
@@ -93,6 +97,19 @@ public class TipoAction extends BaseAction{
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
+	
+	/**
+	 * @return the tipos object
+	 */
+	public List<Tipo> getTipos() {
+		return tipos;
+	}
+
+	/**
+	 * @param tipos the new tipos object to set
+	 */
+	public void setTipos(List<Tipo> tipos) {
+		this.tipos = tipos;
+	}
 
 }
-

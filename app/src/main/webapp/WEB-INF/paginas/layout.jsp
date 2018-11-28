@@ -31,7 +31,7 @@
             
               <li><a href="<s:url action="marcaHome" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showTipoHome" namespace="/actions/socios"/>">Tipo</a></li>
-              <li><a href="<s:url action="" namespace="/actions/socios"/>">Proveedor</a></li>
+              <li><a href="<s:url action="showProveedorHome" namespace="/actions/socios"/>">Proveedor</a></li>
               <li><a href="<s:url action="" namespace="/actions/socios"/>">Almac&eacute;n</a></li>
             </ul> 
             <ul class="nav navbar-nav navbar-right">

@@ -14,7 +14,7 @@
 	    	<tr>
 	        	<th>#</th>
 		        <th>Nombre</th>
-		        <th>Fecha</th>
+		        <th>Fecha de creación</th>
 		        <th></th>
 	      	</tr>
 	    </thead>

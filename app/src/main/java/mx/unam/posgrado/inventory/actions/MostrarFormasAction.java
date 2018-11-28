@@ -9,6 +9,8 @@ import mx.unam.posgrado.inventory.hibernate.AutorDAO;
 import mx.unam.posgrado.inventory.hibernate.Genero;
 import mx.unam.posgrado.inventory.hibernate.GeneroDAO;
 import mx.unam.posgrado.inventory.hibernate.Libro;
+import mx.unam.posgrado.inventory.hibernate.Proveedor;
+import mx.unam.posgrado.inventory.hibernate.ProveedorDAO;
 import mx.unam.posgrado.inventory.hibernate.Tipo;
 import mx.unam.posgrado.inventory.hibernate.TipoDAO;
 import mx.unam.posgrado.inventory.hibernate.Marca;
@@ -30,9 +32,9 @@ public class MostrarFormasAction {
 	private List<Genero> generos;
 	// catálogo autores
 	private List<Autor> autores;
-	// catálogo tipos
+	
 	private Tipo tipo;
-	private List<Tipo> tipos;
+	private Proveedor proveedor;
 	
 	private Marca marca;
 	
@@ -76,25 +78,61 @@ public class MostrarFormasAction {
 		return "success";
 	}
 	
+	/* --------------------------------------------------- */
+	/**
+	 * Show the form to add tipo object
+	 * @return "success" to display new page
+	 */
+	public String showAltaTipoForm() {
+		logger.debug("showAltaTipoForm()");
+		tipo = new Tipo();
+		return "success";
+	}
+	/**
+	 * Show the form to edit tipo object
+	 * @return "success" to display new page
+	 */
 	public String showEditarTipoForm() {
 		logger.info("showEditarTipoForm()");
 		
 		TipoDAO dao = new TipoDAO();
-		logger.info("Info actual object");
-		logger.info(tipo);
+		logger.info("Actual object");
+		logger.info(tipo.toString());
 
 		Tipo completeTipo = dao.getTipoById(tipo.getTipo_id());
 		tipo = completeTipo;
-		logger.info("Info new object");
-		logger.info(tipo);
+		logger.info("New object");
+		logger.info(tipo.toString());
 		
-		//dao.saveTipo(tipo);
 		return "success";
 	}
 	
-	public String showAltaTipoForm() {
-		logger.debug("showNewTipoForm()");
-		tipo = new Tipo();
+	/* --------------------------------------------------- */
+	/**
+	 * Show the form to add proveedor object
+	 * @return "success" to display new page
+	 */
+	public String showAltaProveedorForm() {
+		logger.debug("showAltaProveedorForm()");
+		proveedor = new Proveedor();
+		return "success";
+	}
+	/**
+	 * Show the form to edit proveedor object
+	 * @return "success" to display new page
+	 */
+	public String showEditarProveedorForm() {
+		logger.info("showEditarProveedorForm()");
+		
+		ProveedorDAO dao = new ProveedorDAO();
+		logger.info("Actual object");
+		logger.info(proveedor.toString());
+
+		Proveedor completeProveedor = dao.getProveedorById(proveedor.getProveedor_id());
+		proveedor = completeProveedor;
+		logger.info("New object");
+		logger.info(proveedor.toString());
+		
 		return "success";
 	}
 	
@@ -213,22 +251,21 @@ public class MostrarFormasAction {
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
+
+	/**
+	 * @return the proveedor
+	 */
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	/**
+	 * @param proveedor the new proveedor to set
+	 */
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
 	
-	/**
-	 * @return the tipos
-	 */
-	public List<Tipo> getTipos() {
-		return tipos;
-	}
-
-	/**
-	 * @param tipos the new generos to set
-	 */
-	public void setTipos(List<Tipo> tipos) {
-		this.tipos = tipos;
-	}
-
-
 	/**
 	 * @return the generos
 	 */

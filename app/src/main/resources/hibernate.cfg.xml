@@ -27,6 +27,7 @@
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Publicacion" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Autor" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Usuario" />
+		<mapping class="mx.unam.posgrado.inventory.hibernate.Proveedor" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Marca" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Tipo" />
 		
