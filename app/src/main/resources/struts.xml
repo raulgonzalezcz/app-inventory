@@ -98,39 +98,41 @@
 		
 		<!-- Raul - Tipo -->
 		
-		<action name="showNewTipoInfo" method="showNewTipoInfo" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">secciontipo.tiles</result>
-		</action>
-		
-		<action name="showAltaTiposForm" method="showNewTipoForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">altatipo.tiles</result>
+		<action name="showTipoHome" method="showTipoHome" 
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
+			<result name="success" type="tiles">tipohome.tiles</result>
 		</action>
 		
 		<action name="altatipo" method="agregarTipo" 
-			class="mx.unam.posgrado.inventory.actions.RegistroTipoAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">showNewTipoInfo</param>
+				<param name="actionName">showTipoHome</param>
             	<param name="namespace">/actions/socios</param>
 			</result>
-			<result name="input" type="tiles">altatipo.tiles</result>
 		</action>
 		
 		<action name="bajatipo" method="bajarTipo" 
-			class="mx.unam.posgrado.inventory.actions.RegistroTipoAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">showNewTipoInfo</param>
+				<param name="actionName">showTipoHome</param>
             	<param name="namespace">/actions/socios</param>
 			</result>
 		</action>
 		
-		<action name="showEditarTipo" method="showEditarTipoForm" 
+		<action name="editartipo" method="cambiarTipo" 
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showTipoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="showEditarTipoForm" method="showEditarTipoForm" 
 			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>
 		
-		<action name="cambiotipo" method="cambiarTipo" 
+		<action name="showAltaTiposForm" method="showAltaTipoForm" 
 			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>

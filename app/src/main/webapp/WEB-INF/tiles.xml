@@ -18,7 +18,7 @@
     
     <!-- Vistas públicas -->
     <definition name="login.tiles" extends="pubLayout">
-        <put-attribute name="title" value="Libreria en Linea | Inicio de sesión" />
+        <put-attribute name="title" value="Inicio de sesión" />
         <put-attribute name="body" value="/WEB-INF/paginas/login.jsp" />
     </definition>
     
@@ -30,7 +30,7 @@
     <!-- Vistas de socios -->
     <!-- Página de home que hereda la configuracion de sociosLayout-->
     <definition name="home.tiles" extends="sociosLayout">
-        <put-attribute name="title" value="Libreria en Linea" />
+        <put-attribute name="title" value="Inventario en Linea" />
         <put-attribute name="body" value="/WEB-INF/paginas/home.jsp" />
     </definition>
     
@@ -46,13 +46,13 @@
     
     <!-- Raul Tipo  -->
     
-    <definition name="secciontipo.tiles" extends="sociosLayout">
-        <put-attribute name="title" value="Seccion Tipo" />
-        <put-attribute name="body" value="/WEB-INF/paginas/secciontipo.jsp" />
+    <definition name="tipohome.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Tipos" />
+        <put-attribute name="body" value="/WEB-INF/paginas/tipoHome.jsp" />
     </definition>
     
     <definition name="altatipo.tiles" extends="sociosLayout">
-        <put-attribute name="title" value="Alta tipo" />
+        <put-attribute name="title" value="Formulario de tipo" />
         <put-attribute name="body" value="/WEB-INF/paginas/alta-tipo.jsp" />
     </definition>
     

@@ -25,7 +25,7 @@
 					<td>${tipo.nombre}</td> 
 					<td>${tipo.fecha_creacion}</td> 	                
 					<td style="text-align: right;" >
-			    		<a href="<s:url action="showEditarTipo" namespace="/actions/socios" > <s:param name="tipo.tipo_id">${tipo.tipo_id}</s:param> </s:url>" class="btn btn-primary" role="button">Editar <span class="glyphicon glyphicon-edit"></span></span></a>
+			    		<a href="<s:url action="showEditarTipoForm" namespace="/actions/socios" > <s:param name="tipo.tipo_id">${tipo.tipo_id}</s:param> </s:url>" class="btn btn-primary" role="button">Editar <span class="glyphicon glyphicon-edit"></span></span></a>
 			    		<a href="<s:url action="bajatipo" namespace="/actions/socios" > <s:param name="tipo.tipo_id">${tipo.tipo_id}</s:param> </s:url>" class="btn btn-danger" role="button">Eliminar <span class="glyphicon glyphicon-trash"></span></a>
 
 			        </td>		            

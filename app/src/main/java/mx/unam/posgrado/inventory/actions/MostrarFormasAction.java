@@ -80,30 +80,21 @@ public class MostrarFormasAction {
 		logger.info("showEditarTipoForm()");
 		
 		TipoDAO dao = new TipoDAO();
-		logger.info("Info object");
+		logger.info("Info actual object");
 		logger.info(tipo);
 
 		Tipo completeTipo = dao.getTipoById(tipo.getTipo_id());
 		tipo = completeTipo;
-		logger.info("Info object");
+		logger.info("Info new object");
 		logger.info(tipo);
 		
 		//dao.saveTipo(tipo);
 		return "success";
 	}
 	
-	public String showNewTipoInfo() {
-		logger.debug("showNewTipoInfo()");
-		TipoDAO tipoDAO = new TipoDAO();
-		tipo = new Tipo();
-		tipos = tipoDAO.getAllTipos();
-		return "success";
-	}
-	
-	public String showNewTipoForm() {
-		
+	public String showAltaTipoForm() {
 		logger.debug("showNewTipoForm()");
-		
+		tipo = new Tipo();
 		return "success";
 	}
 	

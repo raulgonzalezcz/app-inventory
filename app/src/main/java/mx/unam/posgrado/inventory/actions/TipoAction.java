@@ -1,6 +1,9 @@
 package mx.unam.posgrado.inventory.actions;
 
 import org.apache.log4j.Logger;
+
+import java.util.List;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
@@ -9,11 +12,27 @@ import mx.unam.posgrado.inventory.hibernate.Tipo;
 import mx.unam.posgrado.inventory.hibernate.TipoDAO;
 import mx.unam.posgrado.inventory.hibernate.UsuarioDAO;
 
-public class RegistroTipoAction extends BaseAction{
+public class TipoAction extends BaseAction{
 	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(RegistroTipoAction.class);
+	private static final Logger logger = Logger.getLogger(TipoAction.class);
 	
 	private Tipo tipo;
+	private List<Tipo> tipos;
+	
+	public List<Tipo> getTipos() {
+		return tipos;
+	}
+
+	public void setTipos(List<Tipo> tipos) {
+		this.tipos = tipos;
+	}
+
+	public String showTipoHome() {
+		logger.debug("showNewTipoInfo()");
+		TipoDAO tipoDAO = new TipoDAO();
+		tipos = tipoDAO.getAllTipos();
+		return "success";
+	}
 	
 	public String agregarTipo() {
 		logger.info("agregarTipo()");
@@ -56,14 +75,9 @@ public class RegistroTipoAction extends BaseAction{
 		TipoDAO dao = new TipoDAO();
 		logger.info("Info object");
 		logger.info(tipo);
-
-		Tipo completeTipo = dao.getTipoById(tipo.getTipo_id());
-		tipo = completeTipo;
-		logger.info("Info object");
-		logger.info(tipo);
+		dao.updateTipo(tipo);
 		
-		//dao.saveTipo(tipo);
-		return "input";
+		return "success";
 	}
 	
 	/**

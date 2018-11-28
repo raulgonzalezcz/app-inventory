@@ -44,4 +44,9 @@ public class TipoDAO extends BaseHibernateDAO{
 	public Tipo getTipoById(int tipo_id){
 		return (Tipo) findById(Tipo.class, tipo_id);
 	}
+	
+	public void updateTipo(Tipo tipo) {
+
+		super.saveOrUpdate(tipo);
+	}
 }
