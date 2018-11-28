@@ -4,11 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import mx.unam.posgrado.inventory.hibernate.Autor;
-import mx.unam.posgrado.inventory.hibernate.AutorDAO;
-import mx.unam.posgrado.inventory.hibernate.Genero;
-import mx.unam.posgrado.inventory.hibernate.GeneroDAO;
-import mx.unam.posgrado.inventory.hibernate.Libro;
+
 import mx.unam.posgrado.inventory.hibernate.Tipo;
 import mx.unam.posgrado.inventory.hibernate.TipoDAO;
 import mx.unam.posgrado.inventory.hibernate.Marca;
@@ -24,12 +20,7 @@ public class MostrarFormasAction {
 	private FrmLogin frmLogin;
 	private FrmUsuario usuario;
 	private FrmCambioPassword frmCambioPasswd;
-	
-	private Libro libro;
-	// catálogo generos
-	private List<Genero> generos;
-	// catálogo autores
-	private List<Autor> autores;
+
 	// catálogo tipos
 	private Tipo tipo;
 	private List<Tipo> tipos;
@@ -63,18 +54,7 @@ public class MostrarFormasAction {
 		return "success";
 	}
 	
-	public String showNewBookForm() {
-		logger.debug("showNewBookForm()");
-		
-		libro = new Libro();
-		
-		AutorDAO autorDAO = new AutorDAO();
-		autores = autorDAO.getAllAutores();
-		GeneroDAO generoDAO = new GeneroDAO();
-		generos = generoDAO.getAllGeneros();
-		
-		return "success";
-	}
+
 	
 	public String showEditarTipoForm() {
 		logger.info("showEditarTipoForm()");
@@ -107,27 +87,6 @@ public class MostrarFormasAction {
 		return "success";
 	}
 	
-	//Andric Marca
-	public String showAltaMarcaForm() {
-		logger.info("showMarcaForm()");
-		logger.debug("Instanciando POJO para la forma marca");
-		// marcaFrm = new FrmMarca();
-		marca = new Marca();
-		return "success";
-	}
-
-
-	public String showEditarMarcaForm() {
-		logger.info("showCambioMarcaForm()" + marca);
-		logger.debug("Instanciando POJO para la forma cambio marca");
-		// marcaFrm = new FrmMarca();
-		MarcaDAO dao = new MarcaDAO();
-		Marca competeMarca = dao.getMarcaById(marca.getId());
-		logger.info("showCambioMarcaForm()" + competeMarca);
-		marca = competeMarca;
-		logger.info("nueva marca " + marca);
-		return "success";
-	}
 
 	/**
 	 * @return the marca
@@ -195,19 +154,7 @@ public class MostrarFormasAction {
 		this.flag = flag;
 	}
 
-	/**
-	 * @return the libro
-	 */
-	public Libro getLibro() {
-		return libro;
-	}
 
-	/**
-	 * @param libro the libro to set
-	 */
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
 	
 	/**
 	 * @return the tipo
@@ -238,33 +185,7 @@ public class MostrarFormasAction {
 	}
 
 
-	/**
-	 * @return the generos
-	 */
-	public List<Genero> getGeneros() {
-		return generos;
-	}
 
-	/**
-	 * @param generos the generos to set
-	 */
-	public void setGeneros(List<Genero> generos) {
-		this.generos = generos;
-	}
-
-	/**
-	 * @return the autores
-	 */
-	public List<Autor> getAutores() {
-		return autores;
-	}
-
-	/**
-	 * @param autores the autores to set
-	 */
-	public void setAutores(List<Autor> autores) {
-		this.autores = autores;
-	}
 
 	/**
 	 * @return the frmCambioPasswd

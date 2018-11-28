@@ -29,10 +29,11 @@
             <ul class="nav navbar-nav">
               <li><a href="<s:url action="showInicio" namespace="/actions/socios"/>">Home</a></li>
             
-              <li><a href="<s:url action="marcaHome" namespace="/actions/socios"/>">Marca</a></li>
+              <li><a href="<s:url action="seccionMarca" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showNewTipoInfo" namespace="/actions/socios"/>">Tipo</a></li>
               <li><a href="<s:url action="" namespace="/actions/socios"/>">Proveedor</a></li>
-              <li><a href="<s:url action="" namespace="/actions/socios"/>">Almac&eacute;n</a></li>
+              <li><a href="<s:url action="seccionAlmacen" namespace="/actions/socios"/>">Almac&eacute;n</a></li>
+              <li><a href="<s:url action="" namespace="/actions/socios"/>">Productos</a></li>
             </ul> 
             <ul class="nav navbar-nav navbar-right">
               <li><a href="<s:url action="logout" namespace="/actions/socios"/>"> <span class="glyphicon glyphicon-log-out"></span> Cerrar Sesi&oacute;n </a></li>
