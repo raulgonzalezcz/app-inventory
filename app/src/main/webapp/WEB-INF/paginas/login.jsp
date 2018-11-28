@@ -7,7 +7,7 @@
 </center>
 <div class="card card-container">
 	<img id="profile-img" class="profile-img-card"
-		src="/images/inventory.jpg" />
+		src="/inventory-webapp/images/inventory.jpg" />
 	<p id="profile-name" class="profile-name-card">Log in</p>
 	<%-- Manejo de mensajes --%> 
 	<s:set var="bandera" value="flag" />
