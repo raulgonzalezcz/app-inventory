@@ -16,20 +16,18 @@
 			jdbc:mysql://localhost:3306/inventario?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password"></property>
+		<property name="connection.password">root</property>
 		
 		<property name="hibernate.show_sql">false</property>
         <property name="format_sql">false</property>
         <property name="use_sql_comments">false</property>
 		
-		<mapping class="mx.unam.posgrado.inventory.hibernate.Genero" />
-		<mapping class="mx.unam.posgrado.inventory.hibernate.Libro" />
-		<mapping class="mx.unam.posgrado.inventory.hibernate.Publicacion" />
-		<mapping class="mx.unam.posgrado.inventory.hibernate.Autor" />
+
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Usuario" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Proveedor" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Marca" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Tipo" />
+		<mapping class="mx.unam.posgrado.inventory.hibernate.Almacen" />
 		
 	</session-factory>
 

@@ -14,7 +14,7 @@
 	    	<tr>
 	        	<th>#</th>
 		        <th>Nombre</th>
-		        <th>Fecha</th>
+		        <th>Fecha creación</th>
 		        <th>Descripción</th>
 		        <th></th>
 	      	</tr>
@@ -27,11 +27,9 @@
 					<td>${marca.fecha}</td> 
 					<td>${marca.descripcion}</td> 		                
 					<td style="text-align: right;" >	    		
-
 			    		<a href="<s:url action="editarMarcaPage"  namespace="/actions/socios" > <s:param name="marca.id">${marca.id}</s:param> </s:url>" class="btn btn-primary" role="button">Editar <span class="glyphicon glyphicon-edit"></span></a>
 
 			    		<a href="<s:url action="deleteMarca"  namespace="/actions/socios" > <s:param name="marca.id">${marca.id}</s:param> </s:url>" class="btn btn-danger" role="button">Eliminar <span class="glyphicon glyphicon-trash"></span></a>
-
 			        </td>		            
 				</tr> 				
 			</c:forEach>

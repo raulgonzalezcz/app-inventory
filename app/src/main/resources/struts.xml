@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC
+<!DOCTYPE struts PUBLIC 
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
@@ -85,16 +85,6 @@
 			<result name="input" type="tiles">cambiopassword.tiles</result>
 		</action>
 		
-		<action name="showAltaLibrosForm" method="showNewBookForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">altalibro.tiles</result>
-		</action>
-		
-		<action name="altalibro" method="addBook" 
-			class="mx.unam.posgrado.inventory.actions.RegistroLibroAction">
-			<result name="success" type="tiles">home.tiles</result>
-			<result name="input" type="tiles">altalibro.tiles</result>
-		</action>
 		
 		<!-- *********************************************************** -->
 		<!-- Raul - Proveedor -->
@@ -182,15 +172,15 @@
 		
 		<!-- *********************************************************** -->
 		<!-- Andric - Marca -->
-		<action name="marcaHome" method="showMarcaHome" 
+		<action name="seccionMarca" method="showMarcaHome" 
 			class="mx.unam.posgrado.inventory.actions.MarcaAction">
-			<result name="success" type="tiles">marcaHome.tiles</result>
+			<result name="success" type="tiles">seccionMarca.tiles</result>
 		</action>
 
 		<action name="deleteMarca" method="deleteMarcaByIdAction" 
 			class="mx.unam.posgrado.inventory.actions.MarcaAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">marcaHome</param>
+				<param name="actionName">seccionMarca</param>
             	<param name="namespace">/actions/socios</param>
 			</result>
 		</action>
@@ -198,28 +188,69 @@
 		<action name="altaMarca" method="altaMarcaAction" 
 			class="mx.unam.posgrado.inventory.actions.MarcaAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">marcaHome</param>
+				<param name="actionName">seccionMarca</param>
             	<param name="namespace">/actions/socios</param>
 			</result>
+		</action>
+
+		<action name="altaMarcaPage" method="showAltaMarcaForm" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="tiles">altaCambioMarca.tiles</result>             
 		</action>
 
 		<action name="editarMarca" method="editarMarcaAction" 
 			class="mx.unam.posgrado.inventory.actions.MarcaAction">
 			<result name="success" type="redirectAction">
-				<param name="actionName">marcaHome</param>
+				<param name="actionName">seccionMarca</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+ 
+		<action name="editarMarcaPage" method="showEditarMarcaForm" 
+			class="mx.unam.posgrado.inventory.actions.MarcaAction">
+			<result name="success" type="tiles">altaCambioMarca.tiles</result> 
+		</action>		
+
+
+		<!-- Andric - Almacén -->
+		<action name="seccionAlmacen" method="showAlmacenHome" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="tiles">seccionAlmacen.tiles</result>
+		</action>
+
+		<action name="deleteAlmacen" method="deleteAlmacenByIdAction" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">seccionAlmacen</param>
             	<param name="namespace">/actions/socios</param>
 			</result>
 		</action>
 
-		<action name="editarMarcaPage" method="showEditarMarcaForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">altaMarca.tiles</result>               
-		</action>		
-
-		<action name="altaMarcaPage" method="showAltaMarcaForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">altaMarca.tiles</result>               
+		<action name="altaAlmacenPage" method="showAltaAlmacenForm" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="tiles">altaCambioAlmacen.tiles</result>             
 		</action>
+
+		<action name="altaAlmacen" method="altaAlmacenAction" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">seccionAlmacen</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+
+		<action name="editarAlmacen" method="editarAlmacenAction" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">seccionAlmacen</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+ 
+		<action name="editarAlmacenPage" method="showEditarAlmacenForm" 
+			class="mx.unam.posgrado.inventory.actions.AlmacenAction">
+			<result name="success" type="tiles">altaCambioAlmacen.tiles</result> 
+		</action>	
 
 		<!-- *********************************************************** -->
 		

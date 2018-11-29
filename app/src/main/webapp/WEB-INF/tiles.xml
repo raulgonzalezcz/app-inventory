@@ -39,11 +39,6 @@
         <put-attribute name="body" value="/WEB-INF/paginas/cambio-passwd.jsp" />
     </definition>
     
-    <definition name="altalibro.tiles" extends="sociosLayout">
-        <put-attribute name="title" value="Alta libro" />
-        <put-attribute name="body" value="/WEB-INF/paginas/alta-libro.jsp" />
-    </definition>
-    
     <!-- Raul Proveedor  -->
     <definition name="proveedorhome.tiles" extends="sociosLayout">
         <put-attribute name="title" value="Proveedores" />
@@ -66,15 +61,28 @@
         <put-attribute name="body" value="/WEB-INF/paginas/alta-tipo.jsp" />
     </definition>
     
-    <!-- Andric Marca  -->
-    <definition name="marcaHome.tiles" extends="sociosLayout">
+<!-- Andric Marca  -->
+    <definition name="seccionMarca.tiles" extends="sociosLayout">
         <put-attribute name="title" value="Marcas" />
-        <put-attribute name="body" value="/WEB-INF/paginas/marcaHome.jsp" />
+        <put-attribute name="body" value="/WEB-INF/paginas/seccionMarca.jsp" />
     </definition>
 
-    <definition name="altaMarca.tiles" extends="sociosLayout">
+    <definition name="altaCambioMarca.tiles" extends="sociosLayout">
         <put-attribute name="title" value="AltaMarcas" />
-        <put-attribute name="body" value="/WEB-INF/paginas/altaMarca.jsp" />
+        <put-attribute name="body" value="/WEB-INF/paginas/altaCambioMarca.jsp" />
     </definition>
+
+<!-- Andric Marca  -->
+    <definition name="seccionAlmacen.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Almacen" />
+        <put-attribute name="body" value="/WEB-INF/paginas/seccionAlmacen.jsp" />
+    </definition>
+    
+    <definition name="altaCambioAlmacen.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Almacen" />
+        <put-attribute name="body" value="/WEB-INF/paginas/altaCambioAlmacen.jsp" />
+    </definition>
+
+
     <!--************************************-->
 </tiles-definitions>
