@@ -10,7 +10,7 @@
 	<url>https://github.com/raulgonzalezcz/app-inventory</url>
 	<properties>
 		<version.struts2>2.5.12</version.struts2>
-		<version.mysql.jdbc>8.0.11</version.mysql.jdbc>
+		<version.mysql.jdbc>5.1.44</version.mysql.jdbc>
 		<version.log4j>1.2.17</version.log4j>
 		<version.hibernate>4.3.10.Final</version.hibernate>
 	</properties>

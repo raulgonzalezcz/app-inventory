@@ -12,7 +12,7 @@
 				<span id="reauth-email" class="reauth-email"></span>
 				<s:fielderror/>
 				<p>Nombre:</p>
-				<s:textfield name="tipo.nombre" class="form-control" placeholder="Nombre" required="required"></s:textfield>
+				<s:textfield name="tipo.nombre" class="form-control" placeholder="..." required="required"></s:textfield>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
 					type="submit">Registrar tipo <span class="glyphicon glyphicon-ok"></span></button>
 			</s:form>

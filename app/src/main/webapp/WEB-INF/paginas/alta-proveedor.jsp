@@ -12,9 +12,10 @@
 				<span id="reauth-email" class="reauth-email"></span>
 				<s:fielderror/>
 				<p>Nombre:</p>
-				<s:textfield name="proveedor.nombre" class="form-control" placeholder="Nombre" required="required"></s:textfield>
+				<s:textfield name="proveedor.nombre" class="form-control" placeholder="..." required="required"></s:textfield>
 				<p>Descripci&oacute;n:</p>
-				<s:textfield name="proveedor.descripcion" class="form-control" placeholder="Descripcion" required="required"></s:textfield>
+				<s:textarea name="proveedor.descripcion" class="form-control" placeholder="..." required="required"></s:textarea>
+				<br>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
 					type="submit">Registrar proveedor <span class="glyphicon glyphicon-ok"></span></button>
 			</s:form>
@@ -27,7 +28,7 @@
 				<p>Nombre:</p>
 				<s:textfield name="proveedor.nombre" class="form-control" placeholder="Nuevo nombre" required="required"></s:textfield>
 				<p>Descripci&oacute;n:</p>
-				<s:textfield name="proveedor.descripcion" class="form-control" placeholder="Descripcion" required="required"></s:textfield>
+				<s:textarea name="proveedor.descripcion" class="form-control" placeholder="Nueva descripción" required="required"></s:textarea>
 				<s:textfield name="proveedor.proveedor_id" class="form-control" cssStyle="visibility:hidden"></s:textfield>
 				<s:textfield name="proveedor.fecha_creacion" class="form-control" cssStyle="visibility:hidden"></s:textfield>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"

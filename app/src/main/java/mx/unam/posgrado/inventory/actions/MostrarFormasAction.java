@@ -9,7 +9,8 @@ import mx.unam.posgrado.inventory.hibernate.Tipo;
 import mx.unam.posgrado.inventory.hibernate.TipoDAO;
 import mx.unam.posgrado.inventory.hibernate.Marca;
 import mx.unam.posgrado.inventory.hibernate.MarcaDAO;
-
+import mx.unam.posgrado.inventory.hibernate.Proveedor;
+import mx.unam.posgrado.inventory.hibernate.ProveedorDAO;
 import mx.unam.posgrado.inventory.pojo.FrmCambioPassword;
 import mx.unam.posgrado.inventory.pojo.FrmLogin;
 import mx.unam.posgrado.inventory.pojo.FrmUsuario;
