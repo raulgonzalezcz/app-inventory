@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<center><button class="btn btn-lg btn-block btn-danger"
-					onclick="history.back(-1)">Atrás</button></center>
+<p><a href="<s:url action="showTipoHome" namespace="/actions/socios" />" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Atrás</a> </p>
 <div class="card card-container">
 	<h3 id="profile-name" class="profile-name-card text-center">Registro de tipo</h3>
 	<br>
