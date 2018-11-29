@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
+<p><a href="<s:url action="seccionMarca" namespace="/actions/socios" />" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Atrás</a> </p>
+
 <div class="card card-container">
 	<!-- <img id="profile-img" class="profile-img-card" src="images/inventory.jpg" /> -->
 	<s:if test="%{marca.nombre==null}">
