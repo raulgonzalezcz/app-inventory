@@ -39,6 +39,17 @@
         <put-attribute name="body" value="/WEB-INF/paginas/cambio-passwd.jsp" />
     </definition>
     
+    <!-- Raul Producto  -->
+    <definition name="productohome.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Productos" />
+        <put-attribute name="body" value="/WEB-INF/paginas/productoHome.jsp" />
+    </definition>
+    
+    <definition name="altaproducto.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Formulario de producto" />
+        <put-attribute name="body" value="/WEB-INF/paginas/alta-producto.jsp" />
+    </definition>
+    
     <!-- Raul Proveedor  -->
     <definition name="proveedorhome.tiles" extends="sociosLayout">
         <put-attribute name="title" value="Proveedores" />

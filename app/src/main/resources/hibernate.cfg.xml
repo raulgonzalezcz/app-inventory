@@ -28,6 +28,7 @@
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Marca" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Tipo" />
 		<mapping class="mx.unam.posgrado.inventory.hibernate.Almacen" />
+		<mapping class="mx.unam.posgrado.inventory.hibernate.Producto" />
 		
 	</session-factory>
 

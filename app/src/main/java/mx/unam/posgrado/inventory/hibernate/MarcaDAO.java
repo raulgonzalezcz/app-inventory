@@ -32,5 +32,13 @@ public class MarcaDAO extends BaseHibernateDAO{
 		super.saveOrUpdate(marca);
 	}
 
+	/**
+	 * Query for the primary key
+	 * @param id
+	 * @return
+	 */
+	public Marca findById(int id) {
+		return (Marca) findById(Marca.class, id);
+	}
 
 }

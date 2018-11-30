@@ -85,6 +85,47 @@
 			<result name="input" type="tiles">cambiopassword.tiles</result>
 		</action>
 		
+		<!-- *********************************************************** -->
+		<!-- Raul - Producto -->
+		
+		<action name="showProductoHome" method="showProductoHome" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">productohome.tiles</result>
+		</action>
+		
+		<action name="altaproducto" method="agregarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="bajaproducto" method="bajarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="editarproducto" method="cambiarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="showEditarProductoForm" method="showEditarProductoForm" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">altaproducto.tiles</result>
+		</action>
+		
+		<action name="showAltaProductosForm" method="showAltaProductoForm" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">altaproducto.tiles</result>
+		</action>
 		
 		<!-- *********************************************************** -->
 		<!-- Raul - Proveedor -->
@@ -119,12 +160,12 @@
 		</action>
 		
 		<action name="showEditarProveedorForm" method="showEditarProveedorForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
 			<result name="success" type="tiles">altaproveedor.tiles</result>
 		</action>
 		
 		<action name="showAltaProveedoresForm" method="showAltaProveedorForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
 			<result name="success" type="tiles">altaproveedor.tiles</result>
 		</action>
 		
@@ -161,12 +202,12 @@
 		</action>
 		
 		<action name="showEditarTipoForm" method="showEditarTipoForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>
 		
 		<action name="showAltaTiposForm" method="showAltaTipoForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>
 		

@@ -32,5 +32,12 @@ public class AlmacenDAO extends BaseHibernateDAO{
 		super.saveOrUpdate(almacen);
 	}
 
-
+	/**
+	 * Query for the primary key
+	 * @param id
+	 * @return
+	 */
+	public Almacen findById(int id) {
+		return (Almacen) findById(Almacen.class, id);
+	}
 }

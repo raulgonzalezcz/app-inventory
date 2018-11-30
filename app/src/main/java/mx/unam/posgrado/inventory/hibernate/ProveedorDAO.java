@@ -55,5 +55,14 @@ public class ProveedorDAO extends BaseHibernateDAO{
 	public void updateProveedor(Proveedor proveedor) {
 		super.saveOrUpdate(proveedor);
 	}
+	
+	/**
+	 * Query for the primary key
+	 * @param id
+	 * @return
+	 */
+	public Proveedor findById(int id) {
+		return (Proveedor) findById(Proveedor.class, id);
+	}
 }
 
