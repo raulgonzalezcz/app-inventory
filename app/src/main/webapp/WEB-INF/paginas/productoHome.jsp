@@ -20,6 +20,7 @@
 		        <th>Precio de venta</th>
 		        <th>Descripci&oacute;n</th>
 		        <th>Cantidad</th>
+		        <th>Descuento</th>
 		        <th>Fecha de creación</th>
 		        <th></th>
 	      	</tr>
@@ -35,6 +36,7 @@
 					<td>${producto.precio_venta}</td>
 					<td>${producto.descripcion}</td>
 					<td>${producto.cantidad}</td>
+					<td>${producto.descuento}</td>
 					<td>${producto.fecha_creacion}</td> 	                
 					<td style="text-align: right;" >
 			    		<a href="<s:url action="showEditarProductoForm" namespace="/actions/socios" > <s:param name="producto.producto_id">${producto.producto_id}</s:param> </s:url>" class="btn btn-primary" role="button">Editar <span class="glyphicon glyphicon-edit"></span></span></a>

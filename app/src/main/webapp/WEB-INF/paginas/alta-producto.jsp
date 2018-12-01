@@ -36,13 +36,15 @@
 					</c:forEach> 
 				</select>
 				<p>Precio de venta:</p>
-				<s:textfield name="producto.precio_venta" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textfield min="0" type="number" step="0.01" name="producto.precio_venta" class="form-control" placeholder="..." required="required"></s:textfield>
 				<p>Descripción:</p>
-				<s:textfield name="producto.descripcion" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textarea name="producto.descripcion" class="form-control" placeholder="..." required="required"></s:textarea>
 				<p>Cantidad:</p>
-				<s:textfield name="producto.cantidad" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textfield min="1" type="number" name="producto.cantidad" class="form-control" placeholder="..." required="required"></s:textfield>
 				<p>Foto:</p>
 				<s:textfield name="producto.foto" class="form-control" placeholder="..." required="required"></s:textfield>
+				<p>Descuento (%):</p>
+				<s:textfield type="number" min="0" max="100" name="producto.descuento" class="form-control" placeholder="..." required="required"></s:textfield>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
 					type="submit">Registrar producto <span class="glyphicon glyphicon-ok"></span></button>
 			</s:form>
@@ -78,14 +80,15 @@
 					</c:forEach> 
 				</select>
 				<p>Precio de venta:</p>
-				<s:textfield name="producto.precio_venta" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textfield min="0" type="number" step="0.01" name="producto.precio_venta" class="form-control" placeholder="..." required="required"></s:textfield>
 				<p>Descripción:</p>
-				<s:textfield name="producto.descripcion" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textarea name="producto.descripcion" class="form-control" placeholder="..." required="required"></s:textarea>
 				<p>Cantidad:</p>
-				<s:textfield name="producto.cantidad" class="form-control" placeholder="..." required="required"></s:textfield>
+				<s:textfield min="0" type="number" name="producto.cantidad" class="form-control" placeholder="..." required="required"></s:textfield>
 				<p>Foto:</p>
 				<s:textfield name="producto.foto" class="form-control" placeholder="..." required="required"></s:textfield>				
-
+				<p>Descuento (%):</p>
+				<s:textfield type="number" min="0" max="100" name="producto.descuento" class="form-control" placeholder="..." required="required"></s:textfield>
 				<s:textfield name="producto.producto_id" class="form-control" cssStyle="visibility:hidden"></s:textfield>
 				<s:textfield name="producto.fecha_creacion" class="form-control" cssStyle="visibility:hidden"></s:textfield>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"

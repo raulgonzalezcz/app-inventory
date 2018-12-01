@@ -36,6 +36,7 @@ public class Producto implements java.io.Serializable{
 	private Date fecha_creacion;
 	private int cantidad;
 	private String foto;
+	private int descuento;
 	
 	/**
 	 * @return the producto_id
@@ -200,6 +201,21 @@ public class Producto implements java.io.Serializable{
 	 */
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+	
+	/**
+	 * @return the descuento
+	 */
+	@Column(name = "descuento", nullable = false)
+	public int getDescuento() {
+		return descuento;
+	}
+
+	/**
+	 * @param descuento the new descuento to set
+	 */
+	public void setDescuento(int descuento) {
+		this.descuento = descuento;
 	}
 
 
