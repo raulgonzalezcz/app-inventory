@@ -56,7 +56,7 @@ public class Producto implements java.io.Serializable{
 	}
 	
 	/**
-	 * Manejo del campo que servirá como llave foránea, la cual
+	 * Manejo del campo que servirï¿½ como llave forï¿½nea, la cual
 	 * hace referencia a la tabla marca
 	 * @return the marca
 	 */
@@ -74,7 +74,7 @@ public class Producto implements java.io.Serializable{
 	}
 	
 	/**
-	 * Manejo del campo que servirá como llave foránea, la cual
+	 * Manejo del campo que servirï¿½ como llave forï¿½nea, la cual
 	 * hace referencia a la tabla almacen
 	 * @return the almacen
 	 */
@@ -92,7 +92,7 @@ public class Producto implements java.io.Serializable{
 	}
 	
 	/**
-	 * Manejo del campo que servirá como llave foránea, la cual
+	 * Manejo del campo que servirï¿½ como llave forï¿½nea, la cual
 	 * hace referencia a la tabla proveedor
 	 * @return the proveedor
 	 */
@@ -110,7 +110,7 @@ public class Producto implements java.io.Serializable{
 	}
 	
 	/**
-	 * Manejo del campo que servirá como llave foránea, la cual
+	 * Manejo del campo que servirï¿½ como llave forï¿½nea, la cual
 	 * hace referencia a la tabla tipo
 	 * @return the tipo
 	 */

@@ -11,12 +11,12 @@
 	<p id="profile-name" class="profile-name-card">Log in</p>
 	<%-- Manejo de mensajes --%> 
 	<s:set var="bandera" value="flag" />
-	<!-- <s:if test="%{#bandera=='logout'}">
+	<s:if test="%{#bandera=='logout'}">
 		<div class="alert alert-success fade in">
 			<a href="#" class="close" data-dismiss="alert">×</a> <strong>Su
 				sesi&oacute;n ha sido cerrada</strong>
 		</div>
-	</s:if> -->
+	</s:if>
 	<%-- Verificación de la existencia de algun error generado en el controlador y
 		 registrado a través de la función addActionError 
 	--%>
