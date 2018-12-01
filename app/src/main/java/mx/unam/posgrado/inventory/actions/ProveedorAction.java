@@ -85,6 +85,35 @@ public class ProveedorAction extends BaseAction{
 		return "success";
 	}
 	
+	/* Acciones de formularios --------------------------------------------------- */
+	/**
+	 * Show the form to add proveedor object
+	 * @return "success" to display new page
+	 */
+	public String showAltaProveedorForm() {
+		logger.debug("showAltaProveedorForm()");
+		proveedor = new Proveedor();
+		return "success";
+	}
+	/**
+	 * Show the form to edit proveedor object
+	 * @return "success" to display new page
+	 */
+	public String showEditarProveedorForm() {
+		logger.info("showEditarProveedorForm()");
+		
+		ProveedorDAO dao = new ProveedorDAO();
+		logger.info("Actual object");
+		logger.info(proveedor.toString());
+
+		Proveedor completeProveedor = dao.getProveedorById(proveedor.getProveedor_id());
+		proveedor = completeProveedor;
+		logger.info("New object");
+		logger.info(proveedor.toString());
+		
+		return "success";
+	}
+	
 	/**
 	 * @return the proveedor object
 	 */

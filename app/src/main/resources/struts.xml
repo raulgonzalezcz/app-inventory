@@ -6,7 +6,7 @@
 	<constant name="struts.devMode" value="true" />
 	<!-- Desactivacion del estilo que Struts2 aplica por defecto -->
 	<constant name="struts.ui.theme" value="simple" />
-	
+
 	<package name="default" namespace="/actions/pub" extends="struts-default">
 		<result-types>
 			<result-type name="tiles"
@@ -51,6 +51,27 @@
 			<result name="input" type="tiles">altausuario.tiles</result>
 		</action>
 	</package>
+
+	<!-- Paquete de acciones para el despligue de productos -->  
+	<package name="productos" namespace="/actions/pubProductos" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<!-- Acción por defecto del paquete -->
+		<default-action-ref name="showProductosHome" />
+		
+		<!--
+			Acción que unicamente preparara un pojo para ser enviado junto con la
+			forma de inicio de sesion al usuario 
+		-->
+		<action name="showProductosHome" method="showProductoHome" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">homeP.tiles</result>
+		</action>
+
+	</package>
 	
 	<!-- Paquete de acciones que solo pueden ser alcanzadas si se inicio sesion -->  
 	<package name="socios" namespace="/actions/socios" extends="struts-default">
@@ -85,6 +106,47 @@
 			<result name="input" type="tiles">cambiopassword.tiles</result>
 		</action>
 		
+		<!-- *********************************************************** -->
+		<!-- Raul - Producto -->
+		
+		<action name="showProductoHome" method="showProductoHome" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">productohome.tiles</result>
+		</action>
+		
+		<action name="altaproducto" method="agregarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="bajaproducto" method="bajarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="editarproducto" method="cambiarProducto" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showProductoHome</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
+		</action>
+		
+		<action name="showEditarProductoForm" method="showEditarProductoForm" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">altaproducto.tiles</result>
+		</action>
+		
+		<action name="showAltaProductosForm" method="showAltaProductoForm" 
+			class="mx.unam.posgrado.inventory.actions.ProductoAction">
+			<result name="success" type="tiles">altaproducto.tiles</result>
+		</action>
 		
 		<!-- *********************************************************** -->
 		<!-- Raul - Proveedor -->
@@ -119,12 +181,12 @@
 		</action>
 		
 		<action name="showEditarProveedorForm" method="showEditarProveedorForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
 			<result name="success" type="tiles">altaproveedor.tiles</result>
 		</action>
 		
 		<action name="showAltaProveedoresForm" method="showAltaProveedorForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.ProveedorAction">
 			<result name="success" type="tiles">altaproveedor.tiles</result>
 		</action>
 		
@@ -161,12 +223,12 @@
 		</action>
 		
 		<action name="showEditarTipoForm" method="showEditarTipoForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>
 		
 		<action name="showAltaTiposForm" method="showAltaTipoForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			class="mx.unam.posgrado.inventory.actions.TipoAction">
 			<result name="success" type="tiles">altatipo.tiles</result>
 		</action>
 		

@@ -33,7 +33,7 @@
               <li><a href="<s:url action="seccionMarca" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showProveedorHome" namespace="/actions/socios"/>">Proveedor</a></li>
               <li><a href="<s:url action="seccionAlmacen" namespace="/actions/socios"/>">Almac&eacute;n</a></li>
-              <li><a href="<s:url action="" namespace="/actions/socios"/>">Productos</a></li>
+              <li><a href="<s:url action="showProductoHome" namespace="/actions/socios"/>">Productos</a></li>
             </ul> 
             <ul class="nav navbar-nav navbar-right">
               <li><a href="<s:url action="logout" namespace="/actions/socios"/>"> <span class="glyphicon glyphicon-log-out"></span> Cerrar Sesi&oacute;n </a></li>

@@ -15,6 +15,12 @@
         <put-attribute name="body" value="" />
         <put-attribute name="styles" value="/WEB-INF/paginas/styles.jsp" />
     </definition>
+
+    <definition name="pubProductosLayout" template="/WEB-INF/paginas/productos/mainLayout.jsp">
+        <put-attribute name="title" value="productos" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="styles" value="/WEB-INF/paginas/styles.jsp" />
+    </definition>
     
     <!-- Vistas públicas -->
     <definition name="login.tiles" extends="pubLayout">
@@ -37,6 +43,17 @@
     <definition name="cambiopassword.tiles" extends="sociosLayout">
         <put-attribute name="title" value="Cambio de password" />
         <put-attribute name="body" value="/WEB-INF/paginas/cambio-passwd.jsp" />
+    </definition>
+    
+    <!-- Raul Producto  -->
+    <definition name="productohome.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Productos" />
+        <put-attribute name="body" value="/WEB-INF/paginas/productoHome.jsp" />
+    </definition>
+    
+    <definition name="altaproducto.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Formulario de producto" />
+        <put-attribute name="body" value="/WEB-INF/paginas/alta-producto.jsp" />
     </definition>
     
     <!-- Raul Proveedor  -->
@@ -82,6 +99,13 @@
         <put-attribute name="title" value="Almacen" />
         <put-attribute name="body" value="/WEB-INF/paginas/altaCambioAlmacen.jsp" />
     </definition>
+
+<!-- Andric Producto  -->
+    <definition name="homeP.tiles" extends="pubProductosLayout">
+        <put-attribute name="title" value="Producto" />
+        <put-attribute name="body" value="/WEB-INF/paginas/productos/homeP.jsp" />
+    </definition>
+    
 
 
     <!--************************************-->

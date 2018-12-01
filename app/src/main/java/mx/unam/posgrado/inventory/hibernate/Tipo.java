@@ -1,6 +1,5 @@
 package mx.unam.posgrado.inventory.hibernate;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

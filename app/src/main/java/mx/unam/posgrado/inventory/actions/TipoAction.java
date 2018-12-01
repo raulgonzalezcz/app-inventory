@@ -84,6 +84,35 @@ public class TipoAction extends BaseAction{
 		return "success";
 	}
 	
+	/* Acciones de formularios --------------------------------------------------- */
+	/**
+	 * Show the form to add tipo object
+	 * @return "success" to display new page
+	 */
+	public String showAltaTipoForm() {
+		logger.debug("showAltaTipoForm()");
+		tipo = new Tipo();
+		return "success";
+	}
+	/**
+	 * Show the form to edit tipo object
+	 * @return "success" to display new page
+	 */
+	public String showEditarTipoForm() {
+		logger.info("showEditarTipoForm()");
+		
+		TipoDAO dao = new TipoDAO();
+		logger.info("Actual object");
+		logger.info(tipo.toString());
+
+		Tipo completeTipo = dao.getTipoById(tipo.getTipo_id());
+		tipo = completeTipo;
+		logger.info("New object");
+		logger.info(tipo.toString());
+		
+		return "success";
+	}
+	
 	/**
 	 * @return the tipo object
 	 */
