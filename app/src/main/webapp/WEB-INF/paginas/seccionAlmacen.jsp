@@ -3,7 +3,7 @@
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <div> 
-	<h2>Almacén</h2>
+	<h2>Almacenes</h2>
 	<hr>
 	<center>
 		<p><a href="<s:url action="altaAlmacenPage" namespace="/actions/socios" />" class="btn btn-info" role="button">Agregar Almacén <span class="glyphicon glyphicon-plus"></span></a> </p>
@@ -37,5 +37,6 @@
 				</tr> 				
 			</c:forEach>
 	    </tbody>
-	  </table>			
+	</table>
+				
 </div><!-- /card-container -->

@@ -9,6 +9,7 @@
 	<title><tiles:insertAttribute name="title" ignore="true" /></title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
  <body>
@@ -28,9 +29,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="<s:url action="showInicio" namespace="/actions/socios"/>">Home</a></li>
-            
-              <li><a href="<s:url action="seccionMarca" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showTipoHome" namespace="/actions/socios"/>">Tipo</a></li>
+              <li><a href="<s:url action="seccionMarca" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showProveedorHome" namespace="/actions/socios"/>">Proveedor</a></li>
               <li><a href="<s:url action="seccionAlmacen" namespace="/actions/socios"/>">Almac&eacute;n</a></li>
               <li><a href="<s:url action="" namespace="/actions/socios"/>">Productos</a></li>
