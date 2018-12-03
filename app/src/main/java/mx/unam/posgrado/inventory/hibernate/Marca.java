@@ -11,6 +11,14 @@ import javax.persistence.Temporal;
 import javax.persistence.Transient;
 import java.util.Date;
 
+ /**
+ * Class to model Alamcen object
+ * @author Andric Valdez Valenzuela
+ * @version 1.0 
+ * @since 24/11/2018
+ *
+ */
+ 
 @Entity 
 @Table(name = "marca")
 public class Marca implements java.io.Serializable{

@@ -1,18 +1,21 @@
 package mx.unam.posgrado.inventory.actions;
 
 import org.apache.log4j.Logger;
-
+import java.util.List;
 import mx.unam.posgrado.inventory.pojo.FrmCambioPassword;
 import mx.unam.posgrado.inventory.pojo.FrmLogin;
 import mx.unam.posgrado.inventory.pojo.FrmUsuario;
+import mx.unam.posgrado.inventory.hibernate.Usuario;
+import mx.unam.posgrado.inventory.hibernate.UsuarioDAO;
 
 public class MostrarFormasAction {
 	private static final Logger logger = Logger.getLogger(MostrarFormasAction.class);
 	
 	private FrmLogin frmLogin;
-	private FrmUsuario usuario;
+	private FrmUsuario usuarioFrm;
 	private FrmCambioPassword frmCambioPasswd;
-	
+	private List<Usuario> usuarios;
+	private Usuario usuario;
 	private String flag;
 	
 	/**
@@ -35,20 +38,40 @@ public class MostrarFormasAction {
 	public String showRegisterForm() {
 		logger.info("showRegisterForm()");
 		
-		usuario = new FrmUsuario();
+		usuarioFrm = new FrmUsuario();
 		
 		return "success";
 	}	
 	
 	public String showChangePasswordForm(){
-		logger.info("showChangePasswordForm()");
+		logger.info("showChangePasswordForm()"); 
 		frmCambioPasswd = new FrmCambioPassword();
+		return "success";
+	}
+
+
+	public String showUsuariosHome(){
+		logger.debug("getAllUsuarios()");
+
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarios = usuarioDAO.getAllUsuarios();
+
 		return "success";
 	}
 	
 	public String showHome(){
+
 		return "success";
 	}
+
+	/**
+	 * @return the usuarios
+	 */
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
 
 	/**
 	 * @return the frmLogin
@@ -65,17 +88,17 @@ public class MostrarFormasAction {
 	}
 	
 	/**
-	 * @return the usuario
+	 * @return the usuarioFrm
 	 */
 	public FrmUsuario getUsuario() {
-		return usuario;
+		return usuarioFrm;
 	}
 
 	/**
-	 * @param usuario the usuario to set
+	 * @param usuarioFrm the usuarioFrm to set
 	 */
-	public void setUsuario(FrmUsuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(FrmUsuario usuarioFrm) {
+		this.usuarioFrm = usuarioFrm;
 	}
 
 	/**

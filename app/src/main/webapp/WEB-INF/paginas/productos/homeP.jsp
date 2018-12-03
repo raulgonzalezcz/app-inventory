@@ -13,7 +13,11 @@
 		<c:forEach items="${productos}" var="producto"> 	
 			<div class="col-sm-3">
 				<div class="card" style="width: 22rem; height: 275px">
-				  <center><img style="width: 70px; height: 70px" class="card-img-top text-center" src="${producto.foto}" alt="Card image cap"></center>
+				  <center>
+				  	<div style="width: 100px; height: 90px;">
+				  		<img class="card-img-top img-thumbnail text-center img-responsive" src="${producto.foto}" alt="Card image cap">
+				  	</div>
+				  </center>
 				  <hr>
 				  <div class="card-body">
 				    <h5 class="card-title text-info">${producto.tipo.nombre} - ${producto.marca.nombre}</h5>

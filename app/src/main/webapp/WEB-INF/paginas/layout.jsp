@@ -28,7 +28,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="<s:url action="showInicio" namespace="/actions/socios"/>">Home</a></li>
+              <li><a href="<s:url action="showInicio" namespace="/actions/socios"/>"><span class="glyphicon glyphicon-home"></span> Home</a></li>
               <li><a href="<s:url action="showTipoHome" namespace="/actions/socios"/>">Tipo</a></li>
               <li><a href="<s:url action="seccionMarca" namespace="/actions/socios"/>">Marca</a></li>
               <li><a href="<s:url action="showProveedorHome" namespace="/actions/socios"/>">Proveedor</a></li>

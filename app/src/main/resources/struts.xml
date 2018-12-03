@@ -52,7 +52,8 @@
 		</action>
 	</package>
 
-	<!-- Paquete de acciones para el despligue de productos -->  
+	<!-- *********************************************************** -->
+	<!-- Andric - Paquete de acciones para el despligue de productos -->  
 	<package name="productos" namespace="/actions/pubProductos" extends="struts-default">
 		<result-types>
 			<result-type name="tiles"
@@ -83,6 +84,11 @@
 		<action name="showInicio" method="showHome" 
 			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
 			<result name="success" type="tiles">home.tiles</result>
+		</action>
+
+		<action name="seccionUsuario" method="showUsuariosHome" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">seccionUsuario.tiles</result>
 		</action>		
 		
 		<action name="logout" method="logoutUsuario" 
@@ -274,6 +280,7 @@
 		</action>		
 
 
+		<!-- *********************************************************** -->
 		<!-- Andric - Almacén -->
 		<action name="seccionAlmacen" method="showAlmacenHome" 
 			class="mx.unam.posgrado.inventory.actions.AlmacenAction">

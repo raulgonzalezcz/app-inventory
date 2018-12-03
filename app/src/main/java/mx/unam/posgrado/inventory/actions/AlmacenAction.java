@@ -11,6 +11,14 @@ import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+ /**
+ * Class to establish actions for Almacen object
+ * @author Andric Valdez Valenzuela
+ * @version 1.0 
+ * @since 24/11/2018
+ *
+ */
+
 
 public class AlmacenAction {
 	private static final Logger logger = Logger.getLogger(AlmacenAction.class);

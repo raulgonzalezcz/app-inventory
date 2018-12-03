@@ -3,6 +3,15 @@ package mx.unam.posgrado.inventory.hibernate;
 import org.apache.log4j.Logger;
 import java.util.List;
  
+
+ /**
+ * Objeto DAO para manipular la información de objetos tipo {@link Marca}
+ * @author Andric Valdez Valenzuela
+ * @version 1.0 
+ * @since 24/11/2018
+ *
+ */
+
 @SuppressWarnings("unchecked")
 public class MarcaDAO extends BaseHibernateDAO{ 
 	private static final Logger logger = Logger.getLogger(MarcaDAO.class);

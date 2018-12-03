@@ -28,14 +28,14 @@ public class CambioPasswdAction extends BaseAction{
 	public String cambiarPassword() {
 		logger.info("cambiarPassword()");
 	
-		String mail = getSession().get("mail").toString();
+		String correo = getSession().get("correo").toString();
 		
 		try {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
 			
 			logger.info("Verificando contraseña anterior");
 			Usuario usuario = usuarioDAO.login( 
-					new FrmLogin( mail, frmCambioPasswd.getPasswdAnterior() ) 
+					new FrmLogin( correo, frmCambioPasswd.getPasswdAnterior() ) 
 				);
 			
 			if( usuario != null ) {
