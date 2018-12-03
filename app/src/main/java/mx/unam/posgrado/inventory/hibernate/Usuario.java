@@ -9,11 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
  
-/**
+ /**
  * 
- * @author Gabriel Gonzalez
+ * @author Andric Valdez Valenzuela
+ * @version 1.0 
+ * @since 22/11/2018
  *
  */
+
 @Entity
 @Table( name = "usuario" )
 public class Usuario implements java.io.Serializable{
@@ -25,7 +28,7 @@ public class Usuario implements java.io.Serializable{
 	private String nombre;
 	private String apellidos;
 	private boolean admin; 
-	private boolean activo; 
+	private boolean activo;  
 	private String fecha_creacion; 
 	
 	public Usuario() {} 

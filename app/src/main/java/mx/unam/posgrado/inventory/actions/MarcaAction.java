@@ -12,6 +12,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 
+ /**
+ * Class to establish actions for Marca object
+ * @author Andric Valdez Valenzuela
+ * @version 1.0 
+ * @since 24/11/2018
+ *
+ */
+
 public class MarcaAction {
 	private static final Logger logger = Logger.getLogger(MarcaAction.class);
 	

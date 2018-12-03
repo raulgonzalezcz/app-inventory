@@ -44,6 +44,11 @@
         <put-attribute name="title" value="Cambio de password" />
         <put-attribute name="body" value="/WEB-INF/paginas/cambio-passwd.jsp" />
     </definition>
+
+    <definition name="seccionUsuario.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Cambio de password" />
+        <put-attribute name="body" value="/WEB-INF/paginas/seccionUsuario.jsp" />
+    </definition>
     
     <!-- Raul Producto  -->
     <definition name="productohome.tiles" extends="sociosLayout">

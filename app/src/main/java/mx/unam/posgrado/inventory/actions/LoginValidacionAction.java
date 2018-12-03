@@ -32,8 +32,13 @@ public class LoginValidacionAction extends BaseAction{
 				logger.info("Iniciando sesión");
 				// creación de la sesión de usuario
 				getSession().put("nombreCompleto", usuario.getNombreCompleto());
+				getSession().put("nombre", usuario.getNombre());
+				getSession().put("apellidos", usuario.getApellidos());
 				getSession().put("isAdmin", usuario.isAdmin());
-				getSession().put("mail", usuario.getCorreo());
+				getSession().put("isActivo", usuario.isActivo()); 
+				getSession().put("id", usuario.getId());
+				getSession().put("correo", usuario.getCorreo());
+				getSession().put("fecha", usuario.getFecha());
 				
 				return "autenticado";
 			}else{
