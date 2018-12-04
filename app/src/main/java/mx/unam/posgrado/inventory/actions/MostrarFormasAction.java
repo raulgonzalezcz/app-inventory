@@ -38,7 +38,7 @@ public class MostrarFormasAction {
 	public String showRegisterForm() {
 		logger.info("showRegisterForm()");
 		
-		usuarioFrm = new FrmUsuario();
+		usuario = new Usuario();
 		
 		return "success";
 	}	

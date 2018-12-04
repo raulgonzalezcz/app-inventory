@@ -7,6 +7,10 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.TemporalType;
+import javax.persistence.Temporal;
+import javax.persistence.Transient;
+import java.util.Date;
 
  
  /**
@@ -29,7 +33,7 @@ public class Usuario implements java.io.Serializable{
 	private String apellidos;
 	private boolean admin; 
 	private boolean activo;  
-	private String fecha_creacion; 
+	private Date fecha_creacion; 
 	
 	public Usuario() {} 
 	
@@ -41,7 +45,7 @@ public class Usuario implements java.io.Serializable{
 	 * @param apellidos
 	 * @param fecha_creacion
 	 */
-	public Usuario(String correo, String contrasena, String nombre, String apellidos,  String fecha_creacion) {
+	public Usuario(String correo, String contrasena, String nombre, String apellidos,  Date fecha_creacion) {
 		this.correo = correo;
 		this.contrasena = contrasena;
 		this.nombre = nombre;
@@ -158,17 +162,18 @@ public class Usuario implements java.io.Serializable{
 	}
 
 	/**
-	 * @return the fecha_creacion
+	 * @return the fecha
 	 */
-	@Column ( name = "fecha_creacion", nullable = false, length = 45 )
-	public String getFecha() {
+	@Column (name="fecha_creacion", nullable = false, insertable=false)
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getFecha() {
 		return fecha_creacion;
-	} 
+	}
 	
 	/**
 	 * @param fecha_creacion the fecha_creacion to set
 	 */
-	public void setFecha(String fecha_creacion) {
+	public void setFecha(Date fecha_creacion) {
 		this.fecha_creacion = fecha_creacion;
 	}
 

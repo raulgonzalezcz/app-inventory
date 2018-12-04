@@ -4,8 +4,12 @@
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <div> 
 	<h2>Usuarios</h2>
-	<hr>
+	<hr> 
 	<p><a href="<s:url action="showInicio" namespace="/actions/socios" />" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Atrás</a> </p>
+	<center>
+		<p><a href="<s:url action="showRegisterForm" namespace="/actions/socios" />" class="btn btn-info" role="button">Registrar usuario <span class="glyphicon glyphicon-user"></span></a> </p>
+	</center>
+	<hr>
 
 	<div class="panel panel-primary">
   		<div class="panel-heading text-center"> 
