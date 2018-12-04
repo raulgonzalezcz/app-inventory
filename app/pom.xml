@@ -10,7 +10,7 @@
 	<url>https://github.com/raulgonzalezcz/app-inventory</url>
 	<properties>
 		<version.struts2>2.5.12</version.struts2>
-		<version.mysql.jdbc>8.0.11</version.mysql.jdbc>
+		<version.mysql.jdbc>5.1.44</version.mysql.jdbc>
 		<version.log4j>1.2.17</version.log4j>
 		<version.hibernate>4.3.10.Final</version.hibernate>
 	</properties>
@@ -69,7 +69,7 @@
 			<id>raul.gonzalezcz</id>
 			<name>Raul Gonzalez Cruz</name>
 			<email>raul.gonzalezcz@udlap.mx</email>
-			<url>https://github.com/raulgonzalezcz/app-inventory</url>
+			<url>https://github.com/raulgonzalezcz</url>
 			<organization>UNAM</organization>
 			<roles>
 				<role>developer</role>
@@ -77,14 +77,13 @@
 			<timezone>America/Mexico_City</timezone>
 		</developer>
 		<developer>
-			<id>ggonzalez</id>
-			<name>Gabriel Gonzalez</name>
-			<email>grimheart@gmail.com</email>
-			<url>http://www.example.com/ggonzalez</url>
+			<id>andric.valdez</id>
+			<name>Andric Valdez Valenzuela</name>
+			<email>andric.valdez@gmail.com</email>
+			<url>https://github.com/andricvaldez</url>
 			<organization>UNAM</organization>
 			<organizationUrl>http://www.example.com</organizationUrl>
 			<roles>
-				<role>architect</role>
 				<role>developer</role>
 			</roles>
 			<timezone>America/Mexico_City</timezone>
