@@ -25,11 +25,6 @@
 			<result name="success" type="tiles">login.tiles</result>
 		</action>
 		
-		<action name="showRegisterForm" method="showRegisterForm" 
-			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
-			<result name="success" type="tiles">altausuario.tiles</result>
-		</action>
-		
 		<action name="login" method="loginUsuario" 
 			class="mx.unam.posgrado.inventory.actions.LoginValidacionAction">
 			<result name="autenticado" type="redirectAction">
@@ -41,15 +36,6 @@
 			<result name="error" type="tiles">login.tiles</result>
 		</action>
 		
-		<!-- 
-			Accion para recibir y procesar los datos enviados por el usuario a traves de
-			una forma de registro
-		-->
-		<action name="registro" method="registroUsuario" 
-			class="mx.unam.posgrado.inventory.actions.RegistroAction">
-			<result name="success" type="tiles">home.tiles</result>
-			<result name="input" type="tiles">altausuario.tiles</result>
-		</action>
 	</package>
 
 	<!-- *********************************************************** -->
@@ -89,6 +75,19 @@
 		<action name="seccionUsuario" method="showUsuariosHome" 
 			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
 			<result name="success" type="tiles">seccionUsuario.tiles</result>
+		</action>
+
+		<action name="showRegisterForm" method="showRegisterForm" 
+			class="mx.unam.posgrado.inventory.actions.MostrarFormasAction">
+			<result name="success" type="tiles">altaUsuarioAdmin.tiles</result>
+		</action>
+
+		<action name="registro" method="registroUsuarioAdmin" 
+			class="mx.unam.posgrado.inventory.actions.RegistroAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">seccionUsuario</param>
+            	<param name="namespace">/actions/socios</param>
+			</result>
 		</action>		
 		
 		<action name="logout" method="logoutUsuario" 

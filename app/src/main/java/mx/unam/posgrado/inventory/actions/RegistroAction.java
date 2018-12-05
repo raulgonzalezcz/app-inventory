@@ -15,7 +15,7 @@ public class RegistroAction extends BaseAction{
 	/**
 	 * POJO
 	 */
-	private FrmUsuario usuario;
+	private Usuario usuario;
 	/**
 	 * Objeto tipo string para recibir la confirmación de la contraseña
 	 */
@@ -25,24 +25,24 @@ public class RegistroAction extends BaseAction{
 	 * Simulación de registro de usuario
 	 * @return
 	 */
-	public String registroUsuario() {
+	public String registroUsuarioAdmin() {
 		logger.info("registroUsuario()");
 		
 		logger.info("Datos recibidos: " + usuario);
 		
-		/*
+		
 		Usuario newUsuario = new Usuario();
-		newUsuario.setAdmin(false);
+		newUsuario.setAdmin(true);
+		newUsuario.setActivo(true);
 		newUsuario.setNombre( usuario.getNombre() );
-		newUsuario.setApPaterno( usuario.getApPaterno() );
-		newUsuario.setApMaterno( usuario.getApMaterno());
-		newUsuario.setMail( usuario.getMail() );
-		newUsuario.setPassword( usuario.getPassword() );
+		newUsuario.setApellidos( usuario.getApellidos() );
+		newUsuario.setCorreo( usuario.getCorreo() );
+		newUsuario.setContrasena( usuario.getContrasena() );
 		
 		
 		UsuarioDAO dao = new UsuarioDAO();
 		dao.saveUsuario(newUsuario);
-		*/
+		
 		
 		logger.info("Usuario guardado exitosamente");
 		return "success";
@@ -66,67 +66,62 @@ public class RegistroAction extends BaseAction{
 	public void validate(){
 		logger.info("validate()");
 		
-		if( usuario.getMail() == null || usuario.getMail().isEmpty() ) {
-			logger.error("No se recibió correo");
-			addFieldError("usuario.mail", "El correo es requerido");
-		}
+		// if( usuario.getCorreo() == null || usuario.getCorreo().isEmpty() ) {
+		// 	logger.error("No se recibió correo");
+		// 	addFieldError("usuario.correo", "El correo es requerido");
+		// }
 		
-		if( !usuario.getMail().matches(EMAIL_REGEX) ) {
-			logger.error("Correo mal formado");
-			addFieldError("usuario.mail", "Correo electrónico inválido");
-		}
+		// if( !usuario.getCorreo().matches(EMAIL_REGEX) ) {
+		// 	logger.error("Correo mal formado");
+		// 	addFieldError("usuario.correo", "Correo electrónico inválido");
+		// }
 		
-		if( usuario.getNombre() == null || usuario.getNombre().isEmpty() ) {
-			addFieldError("usuario.nombre", "Nombre es requerido");
-		}
+		// if( usuario.getNombre() == null || usuario.getNombre().isEmpty() ) {
+		// 	addFieldError("usuario.nombre", "Nombre es requerido");
+		// }
 		
-		// Si el nombre tiene caracteres especiales o números
-		if( !usuario.getNombre().matches(SOLO_TEXTO_REGEX) ) {
-			addFieldError("usuario.nombre", "Nombre inválido");
-		}
+		// // Si el nombre tiene caracteres especiales o números
+		// if( !usuario.getNombre().matches(SOLO_TEXTO_REGEX) ) {
+		// 	addFieldError("usuario.nombre", "Nombre inválido");
+		// }
 		
-		if( usuario.getApPaterno() == null || usuario.getApPaterno().isEmpty() ) {
-			addFieldError("usuario.apPaterno", "Apellido paterno requerido");
-		}
+		// if( usuario.getApellidos() == null || usuario.getApellidos().isEmpty() ) {
+		// 	addFieldError("usuario.apellidos", "Apellido paterno requerido");
+		// }
 		
-		if( !usuario.getApPaterno().matches(SOLO_TEXTO_REGEX) ) {
-			addFieldError("usuario.apPaterno", "Apellido paterno inválido");
-		}
+		// if( !usuario.getApellidos().matches(SOLO_TEXTO_REGEX) ) {
+		// 	addFieldError("usuario.apellidos", "Apellido paterno inválido");
+		// }
+
+		// if( usuario.getContrasena() == null || usuario.getContrasena().isEmpty() ) {
+		// 	addFieldError("usuario.password", "Contraseña requerida");
+		// }
 		
-		if( ( usuario.getApMaterno() != null && !usuario.getApMaterno().isEmpty() ) && 
-				!usuario.getApMaterno().matches(SOLO_TEXTO_REGEX) ) {
-			addFieldError("usuario.apMaterno", "Apellido materno inválido");
-		}
+		// if( getPasswordConfirn() == null || getPasswordConfirn().isEmpty() ) {
+		// 	addFieldError("passwordConfirn", "Confirmación de la contraseña requerida");
+		// }
 		
-		if( usuario.getPassword() == null || usuario.getPassword().isEmpty() ) {
-			addFieldError("usuario.password", "Contraseña requerida");
-		}
+		// // Si la contraseña y su confirmación no coinciden
+		// if( !usuario.getContrasena().equals( getPasswordConfirn() ) ) {
+		// 	addFieldError("usuario.password", "La contraseña y su confirmación no coinciden");
+		// }
 		
-		if( getPasswordConfirn() == null || getPasswordConfirn().isEmpty() ) {
-			addFieldError("passwordConfirn", "Confirmación de la contraseña requerida");
-		}
-		
-		// Si la contraseña y su confirmación no coinciden
-		if( !usuario.getPassword().equals( getPasswordConfirn() ) ) {
-			addFieldError("usuario.password", "La contraseña y su confirmación no coinciden");
-		}
-		
-		if( !usuario.getPassword().matches( PASSWD_REGEX ) ) {
-			addFieldError("usuario.password", "La contraseña no cumple la complejidad requerida");
-		}
+		// if( !usuario.getContrasena().matches( PASSWD_REGEX ) ) {
+		// 	addFieldError("usuario.password", "La contraseña no cumple la complejidad requerida");
+		// }
 	}
 	
 	/**
 	 * @return the usuario
 	 */
-	public FrmUsuario getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 	
 	/**
 	 * @param usuario the usuario to set
 	 */
-	public void setUsuario(FrmUsuario usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 	

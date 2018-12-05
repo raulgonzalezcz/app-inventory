@@ -28,16 +28,16 @@
         <put-attribute name="body" value="/WEB-INF/paginas/login.jsp" />
     </definition>
     
-    <definition name="altausuario.tiles" extends="pubLayout">
-        <put-attribute name="title" value="Libreria en Linea | Regístrate" />
-        <put-attribute name="body" value="/WEB-INF/paginas/registro.jsp" />
-    </definition>
-    
     <!-- Vistas de socios -->
     <!-- Página de home que hereda la configuracion de sociosLayout-->
     <definition name="home.tiles" extends="sociosLayout">
         <put-attribute name="title" value="Inventario en Linea" />
         <put-attribute name="body" value="/WEB-INF/paginas/home.jsp" />
+    </definition>
+
+    <definition name="altaUsuarioAdmin.tiles" extends="sociosLayout">
+        <put-attribute name="title" value="Control de Inventario" />
+        <put-attribute name="body" value="/WEB-INF/paginas/registroAdmin.jsp" />
     </definition>
     
     <definition name="cambiopassword.tiles" extends="sociosLayout">
